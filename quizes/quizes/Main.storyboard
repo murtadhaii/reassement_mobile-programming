@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Introduction View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="MovieGenreQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personality Quizzes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="title-label">
+                                <rect key="frame" x="20" y="119" width="353" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="0.13" green="0.13" blue="0.16" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover your personality!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="subtitle-label">
+                                <rect key="frame" x="20" y="172" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.55" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="stack-view">
+                                <rect key="frame" x="20" y="233" width="353" height="200"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="history-button">
+                                <rect key="frame" x="146.66666666666666" y="758" width="100" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="View History">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <color key="baseForegroundColor" red="0.2" green="0.4" blue="0.95" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="historyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="history-action"/>
+                                    <segue destination="history-vc" kind="show" identifier="showHistory" id="segue-history"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.95" green="0.96" blue="0.98" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="title-label" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="title-top"/>
+                            <constraint firstItem="title-label" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="title-leading"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="title-label" secondAttribute="trailing" constant="20" id="title-trailing"/>
+                            <constraint firstItem="subtitle-label" firstAttribute="top" secondItem="title-label" secondAttribute="bottom" constant="12" id="subtitle-top"/>
+                            <constraint firstItem="subtitle-label" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="subtitle-leading"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="subtitle-label" secondAttribute="trailing" constant="20" id="subtitle-trailing"/>
+                            <constraint firstItem="stack-view" firstAttribute="top" secondItem="subtitle-label" secondAttribute="bottom" constant="40" id="stack-top"/>
+                            <constraint firstItem="stack-view" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="stack-leading"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="stack-view" secondAttribute="trailing" constant="20" id="stack-trailing"/>
+                            <constraint firstItem="history-button" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="history-centerx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="history-button" secondAttribute="bottom" constant="20" id="history-bottom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="title-label" id="outlet-title"/>
+                        <outlet property="subtitleLabel" destination="subtitle-label" id="outlet-subtitle"/>
+                        <outlet property="quizSelectionStackView" destination="stack-view" id="outlet-stack"/>
+                        <outlet property="historyButton" destination="history-button" id="outlet-history-btn"/>
+                        <segue destination="nav-controller" kind="presentation" identifier="beginQuiz" id="segue-begin"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nav-scene">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nav-controller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nav-bar">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="question-vc" kind="relationship" relationship="rootViewController" id="nav-root-segue"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="4"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="question-scene">
+            <objects>
+                <viewController id="question-vc" customClass="QuestionViewController" customModule="MovieGenreQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="question-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question text goes here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q-label">
+                                <rect key="frame" x="20" y="123" width="353" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" red="0.13" green="0.13" blue="0.16" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="progress-view">
+                                <rect key="frame" x="20" y="163" width="353" height="4"/>
+                                <color key="tintColor" red="0.2" green="0.4" blue="0.95" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 30s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="timer-label">
+                                <rect key="frame" x="20" y="179" width="353" height="19"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" red="0.2" green="0.4" blue="0.95" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="single-stack">
+                                <rect key="frame" x="20" y="222" width="353" height="200"/>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="multi-stack">
+                                <rect key="frame" x="20" y="222" width="353" height="200"/>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ranged-stack">
+                                <rect key="frame" x="20" y="222" width="353" height="200"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="question-safe"/>
+                        <color key="backgroundColor" red="0.95" green="0.96" blue="0.98" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q-label" firstAttribute="top" secondItem="question-safe" secondAttribute="top" constant="20" id="q-top"/>
+                            <constraint firstItem="q-label" firstAttribute="leading" secondItem="question-safe" secondAttribute="leading" constant="20" id="q-leading"/>
+                            <constraint firstItem="question-safe" firstAttribute="trailing" secondItem="q-label" secondAttribute="trailing" constant="20" id="q-trailing"/>
+                            <constraint firstItem="progress-view" firstAttribute="top" secondItem="q-label" secondAttribute="bottom" constant="16" id="prog-top"/>
+                            <constraint firstItem="progress-view" firstAttribute="leading" secondItem="question-safe" secondAttribute="leading" constant="20" id="prog-leading"/>
+                            <constraint firstItem="question-safe" firstAttribute="trailing" secondItem="progress-view" secondAttribute="trailing" constant="20" id="prog-trailing"/>
+                            <constraint firstItem="timer-label" firstAttribute="top" secondItem="progress-view" secondAttribute="bottom" constant="12" id="timer-top"/>
+                            <constraint firstItem="timer-label" firstAttribute="leading" secondItem="question-safe" secondAttribute="leading" constant="20" id="timer-leading"/>
+                            <constraint firstItem="question-safe" firstAttribute="trailing" secondItem="timer-label" secondAttribute="trailing" constant="20" id="timer-trailing"/>
+                            <constraint firstItem="single-stack" firstAttribute="top" secondItem="timer-label" secondAttribute="bottom" constant="24" id="single-top"/>
+                            <constraint firstItem="single-stack" firstAttribute="leading" secondItem="question-safe" secondAttribute="leading" constant="20" id="single-leading"/>
+                            <constraint firstItem="question-safe" firstAttribute="trailing" secondItem="single-stack" secondAttribute="trailing" constant="20" id="single-trailing"/>
+                            <constraint firstItem="multi-stack" firstAttribute="top" secondItem="timer-label" secondAttribute="bottom" constant="24" id="multi-top"/>
+                            <constraint firstItem="multi-stack" firstAttribute="leading" secondItem="question-safe" secondAttribute="leading" constant="20" id="multi-leading"/>
+                            <constraint firstItem="question-safe" firstAttribute="trailing" secondItem="multi-stack" secondAttribute="trailing" constant="20" id="multi-trailing"/>
+                            <constraint firstItem="ranged-stack" firstAttribute="top" secondItem="timer-label" secondAttribute="bottom" constant="24" id="ranged-top"/>
+                            <constraint firstItem="ranged-stack" firstAttribute="leading" secondItem="question-safe" secondAttribute="leading" constant="20" id="ranged-leading"/>
+                            <constraint firstItem="question-safe" firstAttribute="trailing" secondItem="ranged-stack" secondAttribute="trailing" constant="20" id="ranged-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Question #1" id="question-nav-item"/>
+                    <connections>
+                        <outlet property="questionLabel" destination="q-label" id="outlet-q-label"/>
+                        <outlet property="questionProgressView" destination="progress-view" id="outlet-progress"/>
+                        <outlet property="timerLabel" destination="timer-label" id="outlet-timer"/>
+                        <outlet property="singleStackView" destination="single-stack" id="outlet-single"/>
+                        <outlet property="multipleStackView" destination="multi-stack" id="outlet-multi"/>
+                        <outlet property="rangedStackView" destination="ranged-stack" id="outlet-ranged"/>
+                        <segue destination="results-vc" kind="show" identifier="Results" id="segue-results"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="question-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640" y="4"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="results-scene">
+            <objects>
+                <viewController id="results-vc" customClass="ResultsViewController" customModule="MovieGenreQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="results-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a 🎬!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="result-label">
+                                <rect key="frame" x="40" y="366" width="313" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.13" green="0.13" blue="0.16" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result definition goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="def-label">
+                                <rect key="frame" x="40" y="433" width="313" height="21.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.55" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="results-safe"/>
+                        <color key="backgroundColor" red="0.95" green="0.96" blue="0.98" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="result-label" firstAttribute="centerY" secondItem="results-view" secondAttribute="centerY" constant="-60" id="result-centery"/>
+                            <constraint firstItem="result-label" firstAttribute="leading" secondItem="results-safe" secondAttribute="leading" constant="40" id="result-leading"/>
+                            <constraint firstItem="results-safe" firstAttribute="trailing" secondItem="result-label" secondAttribute="trailing" constant="40" id="result-trailing"/>
+                            <constraint firstItem="def-label" firstAttribute="top" secondItem="result-label" secondAttribute="bottom" constant="24" id="def-top"/>
+                            <constraint firstItem="def-label" firstAttribute="leading" secondItem="results-safe" secondAttribute="leading" constant="40" id="def-leading"/>
+                            <constraint firstItem="results-safe" firstAttribute="trailing" secondItem="def-label" secondAttribute="trailing" constant="40" id="def-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="results-nav-item">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="done-button">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="results-vc" id="done-action"/>
+                                <segue destination="unwind-exit" kind="unwind" unwindAction="unwindToQuizIntroductionWithSegue:" id="unwind-segue"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="result-label" id="outlet-result"/>
+                        <outlet property="resultDefinitionLabel" destination="def-label" id="outlet-def"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="results-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="unwind-exit" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2376" y="4"/>
+        </scene>
+        <!--Quiz History View Controller-->
+        <scene sceneID="history-scene">
+            <objects>
+                <tableViewController id="history-vc" customClass="QuizHistoryViewController" customModule="MovieGenreQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="history-table">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Quiz History" id="history-nav-item"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="history-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="748"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
