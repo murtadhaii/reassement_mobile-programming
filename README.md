@@ -1,9 +1,8 @@
 # IT8108 – Mobile Programming Re-Assessment  
 ## Personality Quiz & List Apps
 
-Student Name: [YOUR NAME]  
-Module: IT8108 Mobile Programming  
-Year: 2025–2026  
+Student Name: Murtadha Alhamali
+Student ID: 202302401
 
 ---
 
