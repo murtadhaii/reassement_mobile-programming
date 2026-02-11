@@ -34,17 +34,9 @@ Each question includes a countdown timer limiting the time available to answer.
 
 ---
 
-## 🎨 Figma Prototype
-High-fidelity interactive prototype:  
+## 🎨 Figma Prototype: 
 https://www.figma.com/design/49gBrKgYwxKCV60TaHuKn1/Untitled?node-id=0-1&t=7N4gCu87vJrvpkzx-1
 
-The prototype includes:
-- Intro screen
-- Quiz selection
-- Question screens
-- Results screen
-- History screen
-- Full navigation flow
 
 ---
 
@@ -74,8 +66,7 @@ Users can enable reminder notifications for items with due dates.
 
 ---
 
-## 🎨 Figma Prototype
-High-fidelity interactive prototype:  
+## 🎨 Figma Prototype:   
 https://www.figma.com/design/49gBrKgYwxKCV60TaHuKn1/Untitled?node-id=16-69&t=UIFSKHEvz92OBegH-1
 
 ---
